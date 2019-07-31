@@ -22,6 +22,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="2dU-xl-CzP">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2dU-xl-CzP" id="7cD-Ju-xlw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,10 +43,14 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="新規追加"/>
+                                <connections>
+                                    <action selector="didClickAddBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OH0-dD-yjB"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="g4c-Pf-nZW" id="IMq-uQ-cxf"/>
                         <segue destination="SL9-kQ-Sca" kind="show" identifier="toNext" id="seN-69-hSV"/>
                     </connections>
                 </viewController>
@@ -44,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="902.89855072463774" y="85.714285714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Input View Controller-->
         <scene sceneID="kZJ-7w-4ey">
             <objects>
-                <viewController id="SL9-kQ-Sca" sceneMemberID="viewController">
+                <viewController id="SL9-kQ-Sca" customClass="InputViewController" customModule="RealmTodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YdX-Zb-GOZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,11 +79,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didClickButton:" destination="SL9-kQ-Sca" eventType="touchUpInside" id="dn7-ax-5Qv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZUM-Mw-3EE"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="F3n-6T-dos" id="rJj-zs-4JD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6y-w4-Tgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

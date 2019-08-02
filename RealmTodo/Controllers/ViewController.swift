@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         
         // Todoの一覧を取得する
         todos = realm.objects(Todo.self).reversed()
+        
+        // テーブルを更新
         tableView.reloadData()
     }
     
